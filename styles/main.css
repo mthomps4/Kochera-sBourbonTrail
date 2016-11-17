@@ -134,6 +134,12 @@ header{
     font-size:1.25em;
 }
 
-.backInfo{
+footer {
+    border-top:solid 1px #ccc;
+}
 
+footer p{
+    color:white; 
+    opacity: .5;
+    margin-left:2em;
 }
