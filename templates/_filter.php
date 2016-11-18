@@ -20,7 +20,7 @@
   ?>
 
     <select name="StarRanking" class="Search">
-      <option value='false'<?php if($StarRanking == "Star Ranking"){echo ' selected';}?>>Star Ranking</option>
+      <option value='Star Ranking'<?php if($StarRanking == "Star Ranking"){echo ' selected';}?>>Star Ranking</option>
       <option value='1'<?php if($StarRanking == "1"){echo ' selected';}?>>1 Stars</option>
       <option value='2'<?php if($StarRanking == "2"){echo ' selected';}?>>2 Stars</option>
       <option value='3'<?php if($StarRanking == "3"){echo ' selected';}?>>3 Stars</option>

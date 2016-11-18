@@ -9,10 +9,10 @@ $BourbonSearch = "";
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $Distillery = $_POST['Distillery'];
-    // $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_SPECIAL_CHARS));
-    // $StarRanking = trim(filter_input(INPUT_POST, 'StarRanking', FILTER_SANITIZE_STRING));
-    // $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
+    // $Distillery = $_POST['Distillery'];
+    $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_SPECIAL_CHARS));
+    $StarRanking = trim(filter_input(INPUT_POST, 'StarRanking', FILTER_SANITIZE_STRING));
+    $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
   }
 
   echo $Distillery;
