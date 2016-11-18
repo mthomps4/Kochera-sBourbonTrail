@@ -3,25 +3,31 @@
 /*font-family: 'Playfair Display SC', serif;*/
 
 html, body{
-    background:#212121; 
+    background:#212121;
     font-family: 'Playfair Display SC', serif;
 }
 
 header{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding:20px;
     color:white;
 }
 
+.Search{
+  padding:2px;
+}
+
 .title{
     font-family: 'Playfair Display SC', serif;
-    font-weight: 900; 
-    font-size:4em; 
+    font-weight: 900;
+    font-size:2em;
+    text-align: center;
 }
 
 .bourbonListContainer{
-    display:flex; 
+    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,33 +37,33 @@ header{
 
 .cardContainer{
 	perspective: 1000px;
-    margin:40px; 
+  margin:40px;
 }
 
 .cardContainer:hover .flipper, .cardContainer.hover .flipper{
-    transform: rotateY(180deg); 
+    transform: rotateY(180deg);
 }
 
 .flipper{
-    transition: 0.6s; 
+    transition: 0.6s;
     transform-style: preserve-3d;
-    position:relative; 
+    position:relative;
 }
 
 .cardContainer, .cardFront, .cardBack{
-    width:25%; 
-    height:450px;
+    width:100%;
+    height:350px;
 }
 
 .cardFront, .cardBack{
     backface-visibility: hidden;
     position: absolute;
     top:0;
-    left:0; 
+    left:0;
 }
 
 .cardFront{
-    z-index:2; 
+    z-index:2;
     transform: rotateY(0deg);
 }
 
@@ -68,39 +74,38 @@ header{
 /*Card Styles*/
 .cardContainer{
     background:#212121;
+    margin:30px;
 }
+
 .cardFront{
     width:100%;
+    height:100%;
 }
 
 .cardFront img{
     width:100%;
-    height:275px; 
+    height:173px;
+    vertical-align: middle;
 }
 
 .flexTitle{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    
+
     margin:0;
-    height:175px;  
+    height:177px;
     background:#646464;
 }
 
 .frontScore, .backScore{
-    text-align: right;
+    text-align: center;
     color:white;
-    opacity:.83; 
-    padding-right: 15px;
-}
-
-.backScore{
-    text-align: left;
+    opacity:.83;
 }
 
 .frontScore img, .backScore img{
-    width:20px; 
+    width:20px;
     height:20px;
 }
 
@@ -111,6 +116,7 @@ header{
     opacity:.83;
     padding:0 10px;
     padding-bottom:0;
+    margin:10px;
 }
 
 .frontDistillery{
@@ -126,12 +132,13 @@ header{
     background:#424242;
     color:white;
 
-    display:flex; 
-    justify-content: center; 
+    display:flex;
+    justify-content: center;
     align-items: center;
 
     font-family:sans-serif;
-    font-size:1.25em;
+    font-size:1em;
+    text-align: center;
 }
 
 footer {
@@ -139,7 +146,7 @@ footer {
 }
 
 footer p{
-    color:white; 
+    color:white;
     opacity: .5;
     margin-left:2em;
 }

@@ -1,7 +1,8 @@
 <?php
-include("inc/connection.php");
-include("inc/functions.php");
-include("templates/_header.php");
+  include("inc/connection.php");
+  include("inc/functions.php");
+  include("templates/_header.php");
+  include("templates/_filter.php");
 ?>
 
 <div class="bourbonListContainer">
@@ -12,27 +13,27 @@ include("templates/_header.php");
   foreach($BourbonList as $item){
     echo "<div class='cardContainer' ontouchstart=this.classList.toggle('hover');>";
     echo "<div class='flipper'>";
-      
-      
-      echo "<div class='cardFront'>"; 
-        echo "<div class='frontInfo'>"; 
+
+
+      echo "<div class='cardFront'>";
+        echo "<div class='frontInfo'>";
             echo "<img src='http://ultimatebourbonlist.com/wp-content/uploads/2015/08/bourbonglass20.jpg' alt='Woodford'/>";
           echo "<div class='flexTitle'>";
             echo "<h3 class='frontTitle'>" . $item['Name'] . "</h3>";
             echo "<p class='frontDistillery'>" . $item['Distillery'] . "</p>";
 
-         echo "<p class='frontScore'> Ranking: ";
+         echo "<p class='frontScore'>";
             for ($i = 1; $i <= $item['Score']; $i++){
               echo "<img src='../styles/GoldStar.png' alt='star rank' />";
             }
-          echo "</p>";//Star Rank 
+          echo "</p>";//Star Rank
 
 
           echo "</div>";
-        echo "</div>"; // frontInfo 
+        echo "</div>"; // frontInfo
       echo "</div>"; // cardFront
 
-      echo "<div class='cardBack'>"; 
+      echo "<div class='cardBack'>";
         echo "<div class='backInfo'>";
           echo "<p class='backTitle'>" . $item['Name'] . "</h3>";
           echo "<p class='Distillery'> Distillery:  " . $item['Distillery'] . "</p>";
@@ -42,17 +43,17 @@ include("templates/_header.php");
               for ($i = 1; $i <= $item['Score']; $i++){
                 echo "<img src='../styles/GoldStar.png' alt='star rank' />";
                }
-          echo "</p>";//Star Rank 
+          echo "</p>";//Star Rank
         echo "</div>"; // backInfo
-      echo "</div>"; // cardBack 
+      echo "</div>"; // cardBack
 
 
     echo "</div>"; //flipper
-    echo "</div>"; // cardContainer  
+    echo "</div>"; // cardContainer
   }
 
 ?>
 
-</div> 
+</div>
 
 <?php include("templates/_footer.php"); ?>
