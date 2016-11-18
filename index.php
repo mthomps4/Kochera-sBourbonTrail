@@ -8,9 +8,11 @@ $StarRanking = "Star Ranking";
 $BourbonSearch = "";
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_STRING));
-    $StarRanking = trim(filter_input(INPUT_POST, 'StarRanking', FILTER_SANITIZE_STRING));
-    $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
+
+    $Distillery = $_POST['Distillery'];
+    // $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_SPECIAL_CHARS));
+    // $StarRanking = trim(filter_input(INPUT_POST, 'StarRanking', FILTER_SANITIZE_STRING));
+    // $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
   }
 
   echo $Distillery;
@@ -24,7 +26,7 @@ $BourbonSearch = "";
 
 <?php
 
-  $BourbonList = getBourbonList();
+  $BourbonList = getBourbonList($Distillery,$StarRanking,$BourbonSearch);
   foreach($BourbonList as $item){
     echo "<div class='cardContainer' ontouchstart=this.classList.toggle('hover');>";
     echo "<div class='flipper'>";

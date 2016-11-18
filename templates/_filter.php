@@ -8,8 +8,12 @@
         echo ">Search by Distillery </option>";
 
         foreach($DistilleryList as $place){
-          echo "<option value='". $place . "'";
-          if($Distillery == $place){echo ' selected';}
+?>
+<option value="<?php echo $place;?>"
+  <?php if($Distillery == $place){echo ' selected';}
+
+          // echo "<option value='". $place . "'";
+          // if($Distillery == $place){echo ' selected';}
           echo ">" . $place . "</option>";
         }
     echo "</select>";

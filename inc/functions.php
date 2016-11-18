@@ -1,8 +1,18 @@
 <?php
 
-function getBourbonList(){
+function getBourbonList($Distillery,$StarRanking,$BourbonSearch){
   include 'connection.php';
-      $sql = "SELECT * FROM `Bourbon List`"; //get all
+  $sql = "SELECT * FROM `Bourbon List`"; //get all
+
+  if(isset($Distillery)){
+    $Distillery = str_replace("'", "\'", $Distillery);
+    var_dump($Distillery);
+    if($Distillery != "Search by Distillery"){
+    $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery'";
+      }
+    }
+    var_dump($sql);
+
   try{
     $results = $db->prepare($sql);
       if(isset($filter)){
