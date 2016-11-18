@@ -1,27 +1,32 @@
 <div>
-  <form method="post" action="/">
+  <form method="post" action="#">
   <?php
-    echo "<select id='Distillery' class='Search'>";
+    echo "<select name='Distillery' class='Search'>";
       $DistilleryList = getDistilleryList();
-        echo "<option> Distillery </option>";
+        echo "<option";
+        if($Distillery == 'Search by Distillery'){echo ' selected';}
+        echo ">Search by Distillery </option>";
+
         foreach($DistilleryList as $place){
-          echo "<option>" . $place . "</option>";
+          echo "<option value='". $place . "'";
+          if($Distillery == $place){echo ' selected';}
+          echo ">" . $place . "</option>";
         }
     echo "</select>";
   ?>
 
-    <select id="StarRanking" class="Search">
-      <option>Star Ranking</option>
-      <option>1 Stars</option>
-      <option>2 Stars</option>
-      <option>3 Stars</option>
-      <option>4 Stars</option>
-      <option>5 Stars</option>
+    <select name="StarRanking" class="Search">
+      <option value='false'<?php if($StarRanking == "Star Ranking"){echo ' selected';}?>>Star Ranking</option>
+      <option value='1'<?php if($StarRanking == "1"){echo ' selected';}?>>1 Stars</option>
+      <option value='2'<?php if($StarRanking == "2"){echo ' selected';}?>>2 Stars</option>
+      <option value='3'<?php if($StarRanking == "3"){echo ' selected';}?>>3 Stars</option>
+      <option value='4'<?php if($StarRanking == "4"){echo ' selected';}?>>4 Stars</option>
+      <option value='5'<?php if($StarRanking == "5"){echo ' selected';}?>>5 Stars</option>
     </select>
 
-    <input type="Text" id="BourbonSearch" placeholder="Search Bourbon Name" value="" class="Search">
+    <input type="Text" name="BourbonSearch" placeholder="Search Bourbon Name" value="" class="Search">
 
-    <input type="Submit" Value="Filter Results">
+    <input type="Submit" Value="Go" class="searchButton">
 
   </form>
 </div>

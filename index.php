@@ -2,6 +2,21 @@
   include("inc/connection.php");
   include("inc/functions.php");
   include("templates/_header.php");
+
+$Distillery = "Search by Distillery";
+$StarRanking = "Star Ranking";
+$BourbonSearch = "";
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_STRING));
+    $StarRanking = trim(filter_input(INPUT_POST, 'StarRanking', FILTER_SANITIZE_STRING));
+    $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
+  }
+
+  echo $Distillery;
+  echo $StarRanking;
+  echo $BourbonSearch;
+
   include("templates/_filter.php");
 ?>
 
