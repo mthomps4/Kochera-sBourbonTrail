@@ -9,15 +9,15 @@ $BourbonSearch = "";
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    // $Distillery = $_POST['Distillery'];
-    $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_SPECIAL_CHARS));
+    $Distillery = $_POST['Distillery'];
+    // $Distillery = trim(filter_input(INPUT_POST, 'Distillery', FILTER_SANITIZE_STRING));
     $StarRanking = trim(filter_input(INPUT_POST, 'StarRanking', FILTER_SANITIZE_STRING));
     $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
   }
 
-  echo $Distillery;
-  echo $StarRanking;
-  echo $BourbonSearch;
+  // echo $Distillery;
+  // echo $StarRanking;
+  // echo $BourbonSearch;
 
   include("templates/_filter.php");
 ?>
@@ -72,5 +72,7 @@ $BourbonSearch = "";
 ?>
 
 </div>
+
+
 
 <?php include("templates/_footer.php"); ?>

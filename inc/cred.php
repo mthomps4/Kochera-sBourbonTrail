@@ -1,5 +1,5 @@
 <?php
-$dbname = "Kocheras_Bourbon_Trail";//Leave set
+$dbname = "kochera";//Leave set
 $dbuser = "Kochera"; //Enter Database Username here
-$dbpw = "AzUWT47Y9CLCsETe"; //Enter Database Password here
+$dbpw = "UEE847RyrfU8J5mt"; //Enter Database Password here
 ?>

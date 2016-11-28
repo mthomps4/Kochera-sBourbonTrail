@@ -6,12 +6,11 @@
         echo "<option";
         if($Distillery == 'Search by Distillery'){echo ' selected';}
         echo ">Search by Distillery </option>";
-
         foreach($DistilleryList as $place){
 ?>
+
 <option value="<?php echo $place;?>"
   <?php if($Distillery == $place){echo ' selected';}
-
           // echo "<option value='". $place . "'";
           // if($Distillery == $place){echo ' selected';}
           echo ">" . $place . "</option>";

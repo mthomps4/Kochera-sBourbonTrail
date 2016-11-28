@@ -6,9 +6,10 @@ function getBourbonList($Distillery,$StarRanking,$BourbonSearch){
 
   if(isset($Distillery)){
     $Distillery = str_replace("'", "\'", $Distillery);
+
       if($Distillery != "Search by Distillery"){
       $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery'";
-        }
+      }
     }
 
   if(isset($StarRanking)){
@@ -16,9 +17,8 @@ function getBourbonList($Distillery,$StarRanking,$BourbonSearch){
       $sql = "SELECT * FROM `Bourbon List` WHERE `Score` = $StarRanking";
         }
       }
-
-    var_dump($sql);
-
+    // var_dump($sql);
+    
   try{
     $results = $db->prepare($sql);
       if(isset($filter)){
@@ -43,16 +43,17 @@ function getDistilleryList(){
 
    }catch(Exception $e){
      echo "Error: " . $e->getMessage() . "<br>";
-     echo "BLAH";
      return false;
    }
    $temp = $results->fetchAll(PDO::FETCH_ASSOC);
+
    $list = array();
    foreach($temp as $item){
-     if(!in_array($item['Distillery'], $list)){
-       array_push($list, $item['Distillery']);
+     if(!in_array(trim($item['Distillery']), $list)){
+       array_push($list, trim($item['Distillery']));
      }
    }
+   asort($list);
    return $list;
 }//getDistilleryList
 
