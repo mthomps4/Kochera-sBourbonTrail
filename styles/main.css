@@ -188,3 +188,42 @@ footer p{
     opacity: .5;
     margin-left:2em;
 }
+
+@media (min-width: 440px){
+
+  .bourbonListContainer{
+    justify-content: center;
+    flex-wrap:wrap;
+    width:100%;
+  }
+
+  .cardContainer{
+    width:45%;
+    margin:10px;
+  }
+
+  .frontTitle{
+    font-size:1em;
+  }
+
+}
+
+@media (min-width: 740px){
+
+  .cardContainer{
+    width:30%;
+    margin:10px;
+  }
+
+  @media (min-width: 1080px){
+
+    .cardContainer{
+      width:25%;
+      margin:10px;
+    }
+
+    .frontTitle{
+      font-size:1.25em;
+    }
+
+}
