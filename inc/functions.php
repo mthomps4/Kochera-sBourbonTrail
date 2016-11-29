@@ -4,21 +4,28 @@ function getBourbonList($Distillery,$StarRanking,$BourbonSearch){
   include 'connection.php';
   $sql = "SELECT * FROM `Bourbon List`"; //get all
 
-  if(isset($Distillery)){
+  if(isset($Distillery) && isset($StarRanking)){
     $Distillery = str_replace("'", "\'", $Distillery);
-
       if($Distillery != "Search by Distillery"){
-      $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery'";
+        if($StarRanking != "Star Ranking"){
+          $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery' && `Score` = $StarRanking";
+        }
       }
     }
 
-  if(isset($StarRanking)){
+  if(isset($Distillery) && ($StarRanking == "Star Ranking")){
+    $Distillery = str_replace("'", "\'", $Distillery);
+      if($Distillery != "Search by Distillery"){
+        $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery'";
+      }
+    }
+
+  if(isset($StarRanking) && ($Distillery == "Search by Distillery")){
     if($StarRanking != "Star Ranking"){
       $sql = "SELECT * FROM `Bourbon List` WHERE `Score` = $StarRanking";
         }
       }
-    // var_dump($sql);
-    
+
   try{
     $results = $db->prepare($sql);
       if(isset($filter)){

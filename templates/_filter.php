@@ -7,7 +7,7 @@
         if($Distillery == 'Search by Distillery'){echo ' selected';}
         echo ">Search by Distillery </option>";
         foreach($DistilleryList as $place){
-?>
+    ?>
 
 <option value="<?php echo $place;?>"
   <?php if($Distillery == $place){echo ' selected';}
@@ -27,9 +27,17 @@
       <option value='5'<?php if($StarRanking == "5"){echo ' selected';}?>>5 Stars</option>
     </select>
 
-    <input type="Text" name="BourbonSearch" placeholder="Search Bourbon Name" value="" class="Search">
-
-    <input type="Submit" Value="Search" class="searchButton">
-
+    <!-- <input type="Text" name="BourbonSearch" placeholder="Search Bourbon Name" value="" class="Search"> -->
+    <input name="reset" type="hidden" value="nope">
+    <div class="flexButton">
+      <input type="Submit" name="submit" Value="Reset" class="searchButton">
+      <input type="Submit" name="submit" Value="Search" class="searchButton">
+    </div>
   </form>
+
+<!-- <form method="post" action="#">
+  <input name="reset" type="hidden" value="resetForm">
+  <input type="submit" Value="Reset" class="searchButton">
+</form> -->
+
 </div>
