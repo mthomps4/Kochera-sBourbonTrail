@@ -29,7 +29,7 @@
 
     <input type="Text" name="BourbonSearch" placeholder="Search Bourbon Name" value="" class="Search">
 
-    <input type="Submit" Value="Go" class="searchButton">
+    <input type="Submit" Value="Search" class="searchButton">
 
   </form>
 </div>

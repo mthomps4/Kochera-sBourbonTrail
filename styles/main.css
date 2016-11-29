@@ -5,6 +5,7 @@
 html, body{
     background:#212121;
     font-family: 'Playfair Display SC', serif;
+    box-sizing: border-box;
 }
 
 header{
@@ -15,8 +16,31 @@ header{
     color:white;
 }
 
+form{
+  width:80%;
+  margin:0 auto;
+}
+
 .Search{
-  padding:2px;
+  padding:10px;
+  width:100%;
+  margin:5px 0px;
+  border: 2px solid #2467e4;
+  box-sizing: border-box;
+}
+
+.searchButton{
+  padding:5px;
+  margin:5px 0px;
+  width:100%;
+  background-color:#2467e4;
+  color:white;
+  font-weight: 400;
+  border:none;
+}
+
+.searchButton:hover{
+  background-color:#4689f6;
 }
 
 .title{
