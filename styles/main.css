@@ -63,7 +63,7 @@ header{
 }
 
 .searchButton{
-  padding:5px;
+  padding:8px;
   margin:5px 0;
   width:48%;
   background-color:#2467e4;
@@ -247,6 +247,61 @@ footer p{
 }
 
 .formField .submit:hover{
+  background-color:#4689f6;
+}
+
+.AdminCard{
+  display:flex;
+  flex-direction: column;
+  background-color:black;
+  width:90%;
+  margin:15px;
+  padding:15px;
+  font-family: "Helvetica", "Arial", sans-serif;
+
+  border:2px solid #848484;
+}
+
+.AdminCard p{
+  margin:0;
+  padding:0;
+  color:white;
+  opacity:.83;
+  padding-bottom: 15px;
+}
+
+.AdminCardName{
+  text-align: center;
+}
+
+.addFlex{
+  display:flex;
+  justify-content: center;
+  margin:20px;
+}
+
+.addButton{
+  background-color:#2467e4;
+  padding:8px;
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  width:60%;
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.addButton:hover{
+  background-color:#4689f6;
+}
+
+.edit{
+  background-color:#2467e4;
+  padding:8px;
+  color:white;
+  text-align: center;
+}
+
+.edit:hover{
   background-color:#4689f6;
 }
 
