@@ -9,6 +9,9 @@
 </head>
 <body>
 
+<div class="loginFlex">
+  <a class="login" href="admin/admin.php"> Admin </a>
+</div>
 <header>
     <h1 class='title'> Kochera's Bourbon Trail </h1>
 </header>

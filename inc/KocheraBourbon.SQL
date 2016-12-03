@@ -1,3 +1,16 @@
+CREATE DATABASE BourbonTrail;
+CREATE TABLE login(
+  id int(10) NOT NULL AUTO_INCREMENT,
+  username varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+)
+
+INSERT INTO `login` (`id`, `username`, `password`) VALUES (NULL, 'User', 'UserPassword')
+
+
+
+
 CREATE TABLE `Bourbon List` (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Name VARCHAR(255),
