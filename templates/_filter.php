@@ -27,7 +27,7 @@
       <option value='5'<?php if($StarRanking == "5"){echo ' selected';}?>>5 Stars</option>
     </select>
 
-    <!-- <input type="Text" name="BourbonSearch" placeholder="Search Bourbon Name" value="" class="Search"> -->
+    <input type="Text" name="BourbonSearch" placeholder="Search Bourbon Name" value="<?php if(isset($BourbonSearch)){echo "$BourbonSearch";}?>" class="Search">
     <input name="reset" type="hidden" value="nope">
     <div class="flexButton">
       <input type="Submit" name="submit" Value="Reset" class="searchButton">

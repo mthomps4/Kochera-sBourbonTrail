@@ -6,6 +6,7 @@
 $Distillery = "Search by Distillery";
 $StarRanking = "Star Ranking";
 $BourbonSearch = "";
+$reset = "";
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -16,11 +17,7 @@ $BourbonSearch = "";
       $BourbonSearch = trim(filter_input(INPUT_POST, 'BourbonSearch', FILTER_SANITIZE_STRING));
     }
 
-    if($_POST['submit'] == "Reset"){
-      $Distillery = "Search by Distillery";
-      $StarRanking = "Star Ranking";
-      $BourbonSearch = "";
-    }
+      $reset = $_POST['reset'];
   }
 
   // echo $Distillery;
@@ -36,7 +33,7 @@ $BourbonSearch = "";
 
   $BourbonList = getBourbonList($Distillery,$StarRanking,$BourbonSearch);
   if(empty($BourbonList)){
-    echo "<p class= 'notFound'> No Items Found </p>";
+    echo "<p class= 'notFound'> No Bourbon Found </p>";
   }else{
 
     //Sort by Name
