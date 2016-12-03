@@ -22,15 +22,17 @@ if(isset($_SESSION['UserPassword'])){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+  <title>Kochera's Bourbon Trail</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+      <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-<div id="main">
-<h1>Login</h1>
-<div id="login">
 
-<h2>Login Form</h2>
+  <div class="loginFlex">
+    <a class="login" href="/"> Home </a>
+  </div>
 
 <?php
   if(isset($_SESSION['errorLoginMsg'])){
@@ -38,16 +40,28 @@ if(isset($_SESSION['UserPassword'])){
   }
 ?>
 
-    <form action="../admin/login.php" method="post">
+<div  class="loginFormFlex">
+    <form class="loginForm" action="../admin/login.php" method="post">
+      <h2>Login</h2>
+
+  <div class="formField">
     <label>UserName :</label>
     <input id="username" name="username" placeholder="username" type="text">
+  </div>
+
+  <div  class="formField">
     <label>Password :</label>
     <input id="password" name="password" placeholder="**********" type="password">
-    <input name="submit" type="submit" value=" Login ">
+  </div>
+
+  <div  class="formField">
+    <input class="submit" name="submit" type="submit" value=" Login ">
+  </div>
     </form>
+</div>
+
+<?php include("../templates/_footer.php"); ?>
 
 
-</div>
-</div>
 </body>
 </html>

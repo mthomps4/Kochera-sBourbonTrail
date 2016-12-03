@@ -1,5 +1,5 @@
 <div>
-  <form method="post" action="#">
+  <form class="filterForm" method="post" action="#">
   <?php
     echo "<select name='Distillery' class='Search'>";
       $DistilleryList = getDistilleryList();

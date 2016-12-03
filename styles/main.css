@@ -32,8 +32,8 @@ html, body{
   background-color:#2467e4;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 header{
@@ -44,7 +44,7 @@ header{
     color:white;
 }
 
-form{
+.filterForm{
   width:95%;
   margin:0 auto;
 }
@@ -208,6 +208,7 @@ form{
 }
 
 footer {
+    margin-top:3em;
     border-top:solid 1px #ccc;
 }
 
@@ -215,6 +216,38 @@ footer p{
     color:white;
     opacity: .5;
     margin-left:2em;
+}
+
+.loginFormFlex{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  margin-top:2em;
+}
+
+.loginForm{
+  color: white;
+  opacity: .83;
+}
+
+.formField{
+  padding:10px;
+}
+
+.formField input{
+  padding:5px;
+}
+
+.formField .submit{
+  background-color:#2467e4;
+  border:none;
+  color:white;
+  opacity:.8;
+  float:right;
+}
+
+.formField .submit:hover{
+  background-color:#4689f6;
 }
 
 @media (min-width: 440px){
@@ -243,7 +276,7 @@ footer p{
     margin:10px;
   }
 
-  form{
+  .filterForm{
     width:60%;
   }
 

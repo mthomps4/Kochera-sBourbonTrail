@@ -33,7 +33,7 @@ $reset = "";
 
   $BourbonList = getBourbonList($Distillery,$StarRanking,$BourbonSearch);
   if(empty($BourbonList)){
-    echo "<p class= 'notFound'> No Bourbon Found </p>";
+    echo "<h3 class= 'notFound'> No Bourbon Found </h3>";
   }else{
 
     //Sort by Name
