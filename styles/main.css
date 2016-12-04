@@ -294,14 +294,59 @@ footer p{
   background-color:#4689f6;
 }
 
-.edit{
+.editButton{
   background-color:#2467e4;
   padding:8px;
   color:white;
   text-align: center;
 }
 
-.edit:hover{
+.editButton:hover{
+  background-color:#4689f6;
+}
+
+.deleteButton{
+  background-color:maroon;
+  padding:8px;
+  margin-top:10px;
+  color:white;
+  text-align: center;
+  opacity:.5;
+}
+
+.deleteButton:hover{
+  opacity:1;
+}
+
+/**Add Form **/
+.addFormFlex{
+  width:90%;
+  margin:0 auto;
+}
+
+.addForm label{
+  display:block;
+  width:100%;
+  color:white;
+  opacity:.6;
+  padding-top:10px;
+  padding-bottom:5px;
+}
+
+.addForm input, .selectBox{
+  padding:5px;
+  width:100%;
+}
+
+.addForm .submit{
+  margin-top: 15px;
+  border:none;
+  background-color:#2467e4;
+  color:white;
+  opacity: .8; 
+}
+
+.addform .submit:hover{
   background-color:#4689f6;
 }
 

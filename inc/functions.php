@@ -93,4 +93,23 @@ function getDistilleryList(){
    return $list;
 }//getDistilleryList
 
+
+function add_item($Name, $Distillery, $Proof, $Score, $Reviewed){
+  include 'connection.php';
+    $sql = 'INSERT INTO `Bourbon List` (`Name`, `Distillery`, `Proof`, `Score`, `Reviewed`)
+    VALUES(?, ?, ?, ?, ?)';
+    try {
+      $results = $db->prepare($sql);
+      $results->bindValue(1, $Name, PDO::PARAM_STR);
+      $results->bindValue(2, $Distillery, PDO::PARAM_STR);
+      $results->bindValue(3, $Proof, PDO::PARAM_STR);
+      $results->bindValue(4, $Score, PDO::PARAM_STR);
+      $results->bindValue(5, $Reviewed, PDO::PARAM_STR);
+      $results->execute();
+    } catch (Exception $e) {
+      echo "Error!: " . $e->getMessage() . "<br>";
+      return false;
+    }
+    return true;
+}//Add Item
 ?>

@@ -50,7 +50,7 @@ $reset = "";
 <?php include("../templates/_filter.php"); ?>
 
 <div class="addFlex">
-  <a href="" class="addButton"> Add New Review </a>
+  <a href="addBourbon.php" class="addButton"> Add New Review </a>
 </div>
 
 <div class="bourbonListContainer">
@@ -75,7 +75,8 @@ $reset = "";
         echo "<p>" . $item['Proof'] . " Proof</p>";
         echo "<p>" . $item['Score'] . " Stars</p>";
         echo "<p> Reviewed in " . $item['Reviewed'] . "</p>";
-        echo "<a class='edit'> Edit </a>";
+        echo "<a class='editButton'> Edit </a>";
+        echo "<a class='deleteButton' ontouchstart=this.classList.toggle('hover');> Delete </a>";
       echo "</div>";
     }
   }
