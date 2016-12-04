@@ -75,7 +75,7 @@ $reset = "";
         echo "<p>" . $item['Score'] . " Stars</p>";
         echo "<p> Reviewed in " . $item['Reviewed'] . "</p>";
         echo "<a class='editButton' href='../admin/edit.php/?id=" . $item['id'] . "'>Edit</a>";
-        echo "<a class='deleteButton' ontouchstart=this.classList.toggle('hover');> Delete </a>";
+        echo "<a class='deleteButton' ontouchstart=this.classList.toggle('hover'); href='../admin/delete.php/?id=" . $item['id'] ."'> Delete </a>";
       echo "</div>";
     }
   }
