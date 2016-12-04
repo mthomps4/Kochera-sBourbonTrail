@@ -18,3 +18,7 @@ Database created from Seth Kochera's personal portfolio of over 300 Bourbons!
 - App Title based on User Profile Name "X's Bourbon Trail"
 - Expand Distillery List & Images for future tastings
 - Option to swap from Distillery Image to personal bottle picture
+
+______
+
+![Screen Grab](https://github.com/mthomps4/KocherasBourbonTrail/blob/master/inc/Capture.JPG?raw=true "Screen Grab")
