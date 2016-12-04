@@ -36,7 +36,7 @@ else{
         header('Location: ../admin/admin.php');
         exit;
       }else{
-        $error_message='Could not add project.';
+        $error_message='Could not add review.';
       }
     }
 }//IF POST

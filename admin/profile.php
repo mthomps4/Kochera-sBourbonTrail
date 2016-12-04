@@ -67,7 +67,6 @@ $reset = "";
       $name[$key] = $row['Name'];
     }
     array_multisort($name, SORT_STRING, $BourbonList);
-
     foreach($BourbonList as $item){
       echo "<div class='AdminCard'>";
         echo "<p class='AdminCardName'><b>" . $item['Name'] . "</b></p>";
@@ -75,7 +74,7 @@ $reset = "";
         echo "<p>" . $item['Proof'] . " Proof</p>";
         echo "<p>" . $item['Score'] . " Stars</p>";
         echo "<p> Reviewed in " . $item['Reviewed'] . "</p>";
-        echo "<a class='editButton'> Edit </a>";
+        echo "<a class='editButton' href='../admin/edit.php/?id=" . $item['id'] . "'>Edit</a>";
         echo "<a class='deleteButton' ontouchstart=this.classList.toggle('hover');> Delete </a>";
       echo "</div>";
     }

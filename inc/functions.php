@@ -112,4 +112,38 @@ function add_item($Name, $Distillery, $Proof, $Score, $Reviewed){
     }
     return true;
 }//Add Item
+
+function get_item($id){
+  include 'connection.php';
+     $sql = 'SELECT * FROM `Bourbon List` WHERE `id` = ?';
+     try {
+       $results = $db->prepare($sql);
+       $results->bindValue(1, $id, PDO::PARAM_INT);
+       $results->execute();
+     } catch (Exception $e) {
+       echo "Error!: " . $e->getMessage() . "<br>";
+       return false;
+     }
+     return $results->fetch(PDO::FETCH_ASSOC);
+}//get_Item
+
+function update_item($Name, $Distillery, $Proof, $Score, $Reviewed,$id){
+  include '../inc/connection.php';
+  $sql = "UPDATE `Bourbon List`
+          SET `Name`= '$Name',
+              `Distillery` = '$Distillery',
+              `Proof` = '$Proof',
+              `Score` = '$Score',
+              `Reviewed` = '$Reviewed'
+              WHERE `id` = '$id'";
+  try{
+    echo $sql;
+    $results = $db->prepare($sql);
+    $results->execute();
+  }catch (Exception $e) {
+    echo "Error!: " . $e->getMessage() . "<br>";
+    return false;
+  }
+  return header('Location: ../profile.php');
+}
 ?>
