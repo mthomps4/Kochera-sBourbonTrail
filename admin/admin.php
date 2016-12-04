@@ -36,7 +36,7 @@ if(isset($_SESSION['UserPassword'])){
 
 <?php
   if(isset($_SESSION['errorLoginMsg'])){
-      echo "<h4>" . $_SESSION['errorLoginMsg'] . "</h4>";
+      echo "<h4 class='errorMessage'>" . $_SESSION['errorLoginMsg'] . "</h4>";
   }
 ?>
 

@@ -3,10 +3,12 @@
 function getBourbonList($Distillery,$StarRanking,$BourbonSearch){
   include 'connection.php';
   $sql = "SELECT * FROM `Bourbon List`"; //get all
-if(isset($BourbonSearch)){
+  $Distillery = str_replace("'", "\'", $Distillery);
+
+if(!empty($BourbonSearch)){
 
     if(isset($BourbonSearch) && isset($Distillery) && isset($StarRanking)){
-      $Distillery = str_replace("'", "\'", $Distillery);
+      // $Distillery = str_replace("'", "\'", $Distillery);
       if($Distillery != "Search by Distillery"){
         if($StarRanking != "Star Ranking"){
           $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery' && `Score` = $StarRanking && `Name` LIKE '%$BourbonSearch%'";
@@ -15,26 +17,28 @@ if(isset($BourbonSearch)){
     }
 
     if(isset($BourbonSearch) && isset($Distillery) && ($StarRanking == "Star Ranking")){
-      $Distillery = str_replace("'", "\'", $Distillery);
+      // $Distillery = str_replace("'", "\'", $Distillery);
       if($Distillery != "Search by Distillery"){
           $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery' && `Name` LIKE '%$BourbonSearch%'";
         }
       }
 
       if(isset($BourbonSearch) && isset($StarRanking) && ($Distillery == "Search by Distillery")){
+        // $Distillery = str_replace("'", "\'", $Distillery);
         if($StarRanking != "Star Ranking"){
           $sql = "SELECT * FROM `Bourbon List` WHERE `Score` = $StarRanking && `Name` LIKE '%$BourbonSearch%'";
         }
       }
 
       if(isset($BourbonSearch) && ($StarRanking == "Star Ranking") && ($Distillery == "Search by Distillery")){
+        // $Distillery = str_replace("'", "\'", $Distillery);
         $sql = "SELECT * FROM `Bourbon List` WHERE `Name` LIKE '%$BourbonSearch%'";
       }
 }
 
 else{
   if(isset($Distillery) && isset($StarRanking)){
-    $Distillery = str_replace("'", "\'", $Distillery);
+    // $Distillery = str_replace("'", "\'", $Distillery);
       if($Distillery != "Search by Distillery"){
         if($StarRanking != "Star Ranking"){
           $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery' && `Score` = $StarRanking";
@@ -43,7 +47,7 @@ else{
     }
 
   if(isset($Distillery) && ($StarRanking == "Star Ranking")){
-    $Distillery = str_replace("'", "\'", $Distillery);
+    // $Distillery = str_replace("'", "\'", $Distillery);
       if($Distillery != "Search by Distillery"){
         $sql = "SELECT * FROM `Bourbon List` WHERE `Distillery`= '$Distillery'";
       }
@@ -57,9 +61,6 @@ else{
 }
   try{
     $results = $db->prepare($sql);
-      if(isset($filter)){
-        $results->bindParam(1, $filter);
-      }
     $results->execute();
   }catch(Exception $e){
     echo "Error: " . $e->getMessage() . "<br>";

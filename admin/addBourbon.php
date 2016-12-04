@@ -63,7 +63,7 @@ else{
 
 <?php
 if(isset($error_message)){
-  echo "<p>" . $error_message . "</p>";
+  echo "<p class='errorMessage'>" . $error_message . "</p>";
 }
 ?>
 

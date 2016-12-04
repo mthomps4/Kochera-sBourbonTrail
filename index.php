@@ -49,7 +49,9 @@ $reset = "";
 
         echo "<div class='cardFront'>";
           echo "<div class='frontInfo'>";
-              echo "<img src='http://ultimatebourbonlist.com/wp-content/uploads/2015/08/bourbonglass20.jpg' alt='Woodford'/>";
+          echo "<p class='pourNumber'>#" . $item['id'] . "</p>";
+              // echo "<img src='http://ultimatebourbonlist.com/wp-content/uploads/2015/08/bourbonglass20.jpg' alt='Woodford'/>";
+              echo "<img src='http://wp.streetwise.co/wp-content/uploads//2014/05/shutterstock_128243333.jpg' alt='Bourbon Pour'/>";
             echo "<div class='flexTitle'>";
               echo "<h3 class='frontTitle'>" . $item['Name'] . "</h3>";
               // echo "<p class='frontDistillery'>" . $item['Distillery'] . "</p>";
